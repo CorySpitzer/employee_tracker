@@ -1,0 +1,12 @@
+<h2>Track your employees!</h2>
+
+<h2>Would you care to add a division at this time<
+
+<h3>Here is a list of your divisions!!!</h3>
+<ul>
+  <% @divisions.each do |division| %>
+    <li>
+      <a href="division/<%= division.id() %>"><%= division.name %></a>
+    </li>
+  <% end %>
+</ul>
