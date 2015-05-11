@@ -20,4 +20,15 @@ describe('The app', :type => :feature) do
       expect(page).to have_content('ball pit')
     end
   end
+
+  describe('clicking on a division') do
+    it("displays an individual division's page") do
+      visit('/')
+      fill_in('division_name', :with => 'ball pit')
+      click_button('Submit!')
+      click_link('ball pit')
+      expect(page).to have_content('Welcome to the ball pit page sucka!')
+    end
+  end
+
 end

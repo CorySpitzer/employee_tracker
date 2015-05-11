@@ -12,3 +12,14 @@ get('/') do
   @divisions = Division.all()
   erb(:index)
 end
+
+post('/') do
+  Division.create(name: params.fetch("division_name"))
+  @divisions = Division.all()
+  erb(:index)
+end
+
+get('/division/:id') do
+  @division = Division.find(params.fetch("id"))
+  erb(:division)
+end
