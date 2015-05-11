@@ -20,6 +20,9 @@ post('/') do
 end
 
 get('/division/:id') do
+  @employees = Employee.all()
   @division = Division.find(params.fetch("id"))
   erb(:division)
 end
+
+# add post('/') here

@@ -1,0 +1,20 @@
+<h1>Welcome to the <%= @division.name() %> page sucka!!</h1>
+
+<h2>Would you care to add a fool to this division?</h2>
+
+<form action="/division/:id" method="post">
+  <label for="employee_name">What's this fools name?</label>
+  <input id="employee_name" name="employee_name" type="text">
+
+  <button type="submit">Submit!</button>
+</form>
+
+
+<h3>Here is a list of the idiots in this division divisions!!!</h3>
+<ul>
+  <% @employees.each do |employee| %>
+    <li>
+      <a href="employee/<%= employee.id() %>"><%= employee.name %></a>
+    </li>
+  <% end %>
+</ul>
